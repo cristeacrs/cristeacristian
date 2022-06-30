@@ -1,1 +1,3 @@
-console.log('start si merge');
+const start = () => console.log('start si merge');
+
+start();
