@@ -54,7 +54,8 @@ body {
     justify-content: center;
     align-items: center;
     padding: 16px;
-
+    padding-bottom: 60px;
+    border-bottom: 1px solid $primary-color;
     h1, p {
         font-family: 'Source Sans Pro', sans-serif;
         font-size: 3.6rem;
@@ -86,7 +87,7 @@ body {
         height: 180px;
         border: 2px solid;
         border-color: $primary-color;
-        margin-top: 100px;
+        margin-top: 60px;
 
         @media screen and (max-width: $small) {
             margin-top: 60px;
@@ -95,3 +96,24 @@ body {
     }
 }
 
+.portofolio-links{
+    color: black;
+    display: flex;
+    justify-content: center;
+    flex-flow: row nowrap;
+    font-family: 'Mina', sans-serif;
+    height: 40px;
+    padding: 0;
+    margin-top: 30px;
+}
+
+
+.icons {
+    margin: 0 20px;
+    cursor: pointer;
+    color: black;
+    &:hover {
+        color: $primary-color;
+    }
+
+}
