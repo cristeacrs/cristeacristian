@@ -9,3 +9,22 @@ startWorkingTogether();
 $(".hover").mouseleave(function () {
   $(this).removeClass("hover");
 });
+
+//Capturam toate elementele cu clasa pie din document
+let pies = $(".pie");
+let offsetPoint = 1250;
+
+// function care adauga si scoate clasa animate
+const anmiate = () => {
+  for (let i = 0; i <= pies.length; i++) {
+    $(pies[i]).toggleClass("animate");
+  }
+};
+
+// Scroll eveniment care invoca function de mai sus atunci cand userul ajunge la valoarea scroll peste 540
+$(window).scroll(() => {
+  const topNow = document.documentElement.scrollTop;
+  if (topNow >= 520) {
+    anmiate();
+  }
+});
