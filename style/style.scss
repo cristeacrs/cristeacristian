@@ -138,8 +138,9 @@ h2 {
         justify-content: space-around;
         img {
             max-width: 280px;
+            transform: scale(0.9);
             &:hover{
-                transform: scale(0.9);
+                transform: scale(1);
                 transition: all 0.5s ease;
 
             }
@@ -164,17 +165,14 @@ h2 {
     margin-bottom: 20px;
     margin-top: 10px;
     p {
-        margin: 0 20px;
-        text-align: center;
+        margin: 0 10px;
+        // text-align: center;
         font-size: large;
         font-family: 'BioRhyme', serif;
-        display: flex;
-        margin-bottom: 20px;
+        // font-family: 'Source Sans Pro', sans-serif;
+        margin-bottom: 14px;
         
     }
-}
-.lastparagraf {
-    margin-bottom: 20px;
 }
 
 .footer {
