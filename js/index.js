@@ -12,10 +12,9 @@ $(".hover").mouseleave(function () {
 
 //Capturam toate elementele cu clasa pie din document
 let pies = $(".pie");
-let offsetPoint = 1250;
 
 // function care adauga si scoate clasa animate
-const anmiate = () => {
+const animate = () => {
   for (let i = 0; i <= pies.length; i++) {
     $(pies[i]).toggleClass("animate");
   }
@@ -27,13 +26,13 @@ let canAnimate = true;
 $(window).scroll(() => {
   const topNow = document.documentElement.scrollTop;
   if (topNow >= 520 && canAnimate) {
-    anmiate();
+    animate();
 
     canAnimate = false;
 
     setTimeout(() => {
       canAnimate = true;
-      anmiate();
+      animate();
     }, 2000);
   }
 });
