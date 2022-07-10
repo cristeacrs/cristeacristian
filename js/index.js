@@ -21,10 +21,19 @@ const anmiate = () => {
   }
 };
 
+let canAnimate = true;
+
 // Scroll eveniment care invoca function de mai sus atunci cand userul ajunge la valoarea scroll peste 540
 $(window).scroll(() => {
   const topNow = document.documentElement.scrollTop;
-  if (topNow >= 520) {
+  if (topNow >= 520 && canAnimate) {
     anmiate();
+
+    canAnimate = false;
+
+    setTimeout(() => {
+      canAnimate = true;
+      anmiate();
+    }, 2000);
   }
 });
