@@ -12,6 +12,8 @@ $medium: 900px;
 //     //do Smth
 //   }
 // }
+* {box-sizing:border-box}
+
 
 body {
     background: white;
@@ -137,7 +139,7 @@ h2 {
         img {
             max-width: 280px;
             &:hover{
-                transform: scale(1.3);
+                transform: scale(0.9);
                 transition: all 0.5s ease;
 
             }
@@ -181,3 +183,94 @@ h2 {
     padding: 8px;
     background: $primary-color;
 }
+
+.skills {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+
+    @media screen and (max-width: $small) {
+        justify-content: space-around;
+    }
+
+    @media screen and (max-width: 1200px) {
+        justify-content: space-around;
+    }
+
+    padding: 26px;
+    flex-flow: row wrap;
+    .pie {
+        width: 33%;
+        padding: 8px;
+        margin-top: 20px;
+        font-size: 14px;
+        max-width: 100px;
+        font-family: 'Source Sans Pro', sans-serif;
+        text-decoration: underline;
+
+        @media screen and (max-width: $small) {
+            font-size: 12px;
+        }
+
+        &:after {
+            display: none;
+        }
+    }
+}
+
+@property --p{
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+  }
+  
+  .pie {
+    --p:20;
+    --b:10px;
+    --c:darkred;
+    --w:120px;
+    
+    width:var(--w);
+    aspect-ratio:1;
+    position:relative;
+    display:inline-grid;
+    margin:5px;
+    place-content:center;
+    font-size:15px;
+    font-weight:bold;
+    font-family:sans-serif;
+  }
+  .pie:before,
+  .pie:after {
+    content:"";
+    position:absolute;
+    border-radius:50%;
+  }
+  .pie:before {
+    inset:0;
+    background:
+      radial-gradient(farthest-side,var(--c) 98%,#0000) top/var(--b) var(--b) no-repeat,
+      conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+            mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+  }
+  .pie:after {
+    inset:calc(50% - var(--b)/2);
+    background:var(--c);
+    transform:rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
+  }
+  .animate {
+    animation:p 1s .5s both;
+  }
+  .no-round:before {
+    background-size:0 0,auto;
+  }
+  .no-round:after {
+    content:none;
+  }
+  @keyframes p {
+    from{--p:0}
+  }
+  
+//projects css
